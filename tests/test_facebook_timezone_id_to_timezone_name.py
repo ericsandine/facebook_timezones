@@ -5,7 +5,7 @@ from facebook_timezones import facebookTimezoneIdToTimezoneName
 class TestFacebookTimezoneIdToTimezoneName(unittest.TestCase):
 
     def test_is_valid_pytz_timezone(self):
-        for k, v in facebookTimezoneIdToTimezoneName.iteritems():
+        for k, v in facebookTimezoneIdToTimezoneName.items():
             if k in [0, 142]:
                 # These are placeholders for Unknown and the Number of Timezones
                 continue

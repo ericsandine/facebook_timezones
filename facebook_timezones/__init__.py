@@ -171,7 +171,7 @@ facebookTimezoneIdToTimezoneCode = {
     142: 'TZ_NUM_TIMEZONES'
 }
 # TZ_AMERICA_LOS_ANGELES -> 1
-facebookTimezoneCodeToTimezoneId = {v: k for k, v in facebookTimezoneIdToTimezoneCode.items()}
+facebookTimezoneCodeToTimezoneId = {v: k for k, v in list(facebookTimezoneIdToTimezoneCode.items())}
 
 # 1 -> TZ_AMERICA_LOS_ANGELES
 facebookTimezoneIdToTimezoneName = {
@@ -320,13 +320,13 @@ facebookTimezoneIdToTimezoneName = {
     142: 'Num/Timezones'
 }
 # TZ_AMERICA_LOS_ANGELES -> 1
-facebookTimezoneNameToTimezoneId = {v: k for k, v in facebookTimezoneIdToTimezoneName.items()}
+facebookTimezoneNameToTimezoneId = {v: k for k, v in list(facebookTimezoneIdToTimezoneName.items())}
 
 # TZ_AMERICA_LOS_ANGELES -> America/Los_Angeles
 facebookTimezoneCodeToTimezoneName = \
-    {k: facebookTimezoneIdToTimezoneName[v] for (k, v) in facebookTimezoneCodeToTimezoneId.items()}
+    {k: facebookTimezoneIdToTimezoneName[v] for (k, v) in list(facebookTimezoneCodeToTimezoneId.items())}
 # America/Los_Angeles -> TZ_AMERICA_LOS_ANGELES
-facebookTimezoneNameToTimezoneCode = {v: k for k, v in facebookTimezoneCodeToTimezoneName.items()}
+facebookTimezoneNameToTimezoneCode = {v: k for k, v in list(facebookTimezoneCodeToTimezoneName.items())}
 
 # 5 -> Etc/GMT+5
 def timezoneNameFromTimezoneOffset(timezoneOffset):
